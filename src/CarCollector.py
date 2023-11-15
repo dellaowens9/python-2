@@ -16,5 +16,10 @@ class CarCollector:
     
     @staticmethod
     def _combine(c):
-        # Todo...
-        return <<object>>
+        empty_list = {}
+        for elem in c:
+            empty_list.update({elem :c[elem]})
+            for x in CarCollector.car_dict:
+                if empty_list['id'] == x:
+                    empty_list.update({'make': CarCollector.car_dict[x]})
+        return empty_list

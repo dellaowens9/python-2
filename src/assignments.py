@@ -1,9 +1,14 @@
 # define your methods here.
 # ex1() - ex10()
+from pprint import pprint 
 from src.WordCounter import WordCounter
 from src.TaxMan import TaxMan
 from src.Calculator import Calculator
 from src.CarCollector import CarCollector
+from src.Dwarf import Dwarf
+from src.Fighter import Fighter
+from src.Invoice import Invoice
+import inspect 
 
 
 def ex1():
@@ -94,4 +99,26 @@ def ex7():
     print(calculator4.get_result())
 
 def ex8():
-    pass 
+    pprint(CarCollector.get_data()) 
+
+def ex9():
+    f = Fighter(18)
+    d = Dwarf(15)
+    print(f)
+    print(d)
+    f.fight(d)
+    d.fight(f)
+    print(f)
+    print(d)
+
+def ex10():
+    data = [
+        "1, 2322, 10.00, False",
+        "2, 5435, 60.30, True",
+        "3, 3433, 15.63, False",
+        "4, 8439, 12.77, False",
+        "5, 3424, 11.34, False",
+    ]
+    
+    invoices = [Invoice(*item.split(', ')) for item in data]
+    pprint(invoices) 
